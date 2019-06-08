@@ -8,16 +8,14 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<OfertaSprzedazy> ofertaSprzedazies = new ArrayList<>();
-                new OfertaSprzedazy("ksiazka", 20.0);
-                new OfertaSprzedazy("plyta", 50.0);
-                new OfertaSprzedazy("buty", 150.0);
+        List<OfertaSprzedazy> ofertaSprzedazies = new ArrayList<>(Arrays.asList(
+                new OfertaSprzedazy("ksiazka", 20.0),
+                new OfertaSprzedazy("plyta", 50.0),
+                new OfertaSprzedazy("buty", 150.0)
+        ));
+        Collections.sort(ofertaSprzedazies, new OfertaSprzedazyComparator());
+        System.out.println(ofertaSprzedazies);
 
-        ofertaSprzedazies.addAll(Arrays.asList());
 
-        OfertaSprzedazyComparator ofertaSprzedazyComparator = new OfertaSprzedazyComparator();
-        Collections.sort(ofertaSprzedazies, ofertaSprzedazyComparator);
-
-        ofertaSprzedazies.forEach(System.out::println);
     }
 }
